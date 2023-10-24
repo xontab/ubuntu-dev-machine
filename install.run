@@ -1,0 +1,35 @@
+#!/bin/bash
+
+LOG_FILENAME=output-$(date +"%Y-%m-%d-%H-%M-%S").log
+TITLE="Ubuntu Development Setup Installer v1.0.0"
+
+#--------------------------------------------------------------------------------
+
+CHOICES=$(whiptail --title "$TITLE" --checklist \
+"To add or remove a component, use <SPACE> button.  
+Use <TAB> + <ENTER> to confirm selection" 18 65 10 \
+"1" "Essential Tools (curl, htop, git, neovim...)" ON \
+"2" "Install ZSH (including Plugins)" ON \
+"3" "Install Brew" ON \
+"4" "Install Docker" ON \
+"5" "Install .NET" ON \
+"6" "Install Rider" ON \
+"7" "Install Visual Studio Code" ON \
+"8" "Install Google Chrome" ON \
+"9" "Configure Aliases and Shortcuts" ON \
+"10" "Enable Fingerprint Authentication" ON 3>&1 1>&2 2>&3)
+
+exitstatus=$?
+if [ $exitstatus != 0 ]; then
+    echo "Cancelled installation."
+    exit 130;
+fi
+
+mkdir -p logs 
+bash script.sh "$CHOICES" 2>&1 | tee logs/"$LOG_FILENAME"
+
+#--------------------------------------------------------------------------------
+
+if (whiptail --title "$TITLE"  --yesno "Installation completed.  Do you wish to restart?" 10 60) then
+    sudo reboot
+fi
