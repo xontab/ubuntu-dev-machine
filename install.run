@@ -7,8 +7,8 @@ TITLE="Ubuntu Development Setup Installer v1.0.0"
 
 CHOICES=$(whiptail --title "$TITLE" --checklist \
 "To add or remove a component, use <SPACE> button.  
-Use <TAB> + <ENTER> to confirm selection" 18 65 10 \
-"1" "Essential Tools (curl, htop, git, neovim...)" ON \
+Use <TAB> + <ENTER> to confirm selection" 18 74 10 \
+"1" "Essential Tools (curl, htop, btop, git, neovim, tldr...)" ON \
 "2" "Install ZSH (including Plugins)" ON \
 "3" "Install Brew" ON \
 "4" "Install Docker" ON \

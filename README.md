@@ -6,7 +6,7 @@
 ## Features
 
 * Updates system to latest version (DEB and Snap).
-* Installs essential basic tools such as `htop`, `curl`, `git` and `neovim`.
+* Installs essential basic tools such as `htop`, `btop`, `curl`, `git`, `neovim` and `tldr`.
 * Adds Quake terminal.  This can be activated using `CTRL + F12`.
 * Adds command aliases:
     * `..` equivalent to `cd ..`

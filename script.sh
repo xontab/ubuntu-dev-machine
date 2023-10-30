@@ -56,7 +56,8 @@ sudo snap refresh
 
 if [[ ${CHOICES[*]} =~ '"1"' ]]; then
   echo Installing essential tools
-  sudo apt install curl git gitg htop tilix neovim -y
+  sudo apt install curl git gitg htop btop tilix neovim tldr -y
+  tldr -u
 fi
 
 # --------------------------------------------------------------------------------
