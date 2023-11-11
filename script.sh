@@ -139,15 +139,17 @@ if [[ ${CHOICES[*]} =~ '"6"' ]]; then
 
   echo Adding Rider shortcut
   cat << EOF > ~/.local/share/applications/com.jetbrains-rider.desktop
-  [Desktop Entry]
-  Name=Rider
-  Exec=/usr/lib/rider/bin/rider.sh
-  Comment=JetBrains Rider IDE.
-  Terminal=false
-  PrefersNonDefaultGPU=false
-  Icon=/usr/lib/rider/bin/rider.png
-  Type=Application
-  Categories=Development;
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=JetBrains Rider
+Comment=A cross-platform IDE for .NET
+Icon=/usr/lib/rider/bin/rider.svg
+Exec="/usr/lib/rider/bin/rider.sh" %f
+Actions=
+Categories=Development;IDE;
+StartupNotify=true
+StartupWMClass=jetbrains-rider
 EOF
   xdg-desktop-menu install ~/.local/share/applications/com.jetbrains-rider.desktop
 fi
