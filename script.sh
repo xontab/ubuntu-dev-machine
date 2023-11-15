@@ -10,10 +10,6 @@ source /etc/os-release
 RIDER_FILENAME=JetBrains.Rider-2023.3-EAP3-233.9802.20.Checked.tar.gz
 RIDER_ROOT_FOLDER="JetBrains Rider-233.9802.20"
 
-# .NET pre-release version
-DOTNET_FILENAME=dotnet-sdk-8.0.100-rc.2.23502.2-linux-x64.tar.gz
-DOTNET_DOWNLOAD_LINK=https://download.visualstudio.microsoft.com/download/pr/9144f37e-b370-41ee-a86f-2d2a69251652/bc1d544112ec134184a5aec7f7a1eaf9/$DOTNET_FILENAME
-
 # --------------------------------------------------------------------------------
 
 COLOR_CYAN="\033[0;96m"
@@ -26,10 +22,6 @@ echo -e "The following is the configuration that will be used during the install
 
 ${COLOR_YELLOW}UBUNTU_CODENAME${COLOR_RESET} is ${COLOR_CYAN}$UBUNTU_CODENAME${COLOR_RESET}"
 
-if [[ ${CHOICES[*]} =~ '"5"' ]]; then
-  echo -e "${COLOR_YELLOW}DOTNET_FILENAME${COLOR_RESET} is ${COLOR_CYAN}$DOTNET_FILENAME${COLOR_RESET}
-${COLOR_YELLOW}DOTNET_DOWNLOAD_LINK${COLOR_RESET} is ${COLOR_CYAN}$DOTNET_DOWNLOAD_LINK${COLOR_RESET}"
-fi
 
 if [[ ${CHOICES[*]} =~ '"6"' ]]; then
   echo -e "${COLOR_YELLOW}RIDER_FILENAME${COLOR_RESET} is ${COLOR_CYAN}$RIDER_FILENAME${COLOR_RESET}
@@ -119,12 +111,17 @@ fi
 
 if [[ ${CHOICES[*]} =~ '"5"' ]]; then
   echo Installing .NET
-  sudo apt-get install dotnet-sdk-7.0 -y
-
-  # Temporary installation for .NET pre-release version
-  wget $DOTNET_DOWNLOAD_LINK
-  sudo tar -xvzf $DOTNET_FILENAME --directory /usr/lib/dotnet
-  rm $DOTNET_FILENAME
+  # Get Ubuntu version
+  declare repo_version=$(if command -v lsb_release &> /dev/null; then lsb_release -r -s; else grep -oP '(?<=^VERSION_ID=).+' /etc/os-release | tr -d '"'; fi)
+  # Download Microsoft signing key and repository
+  wget https://packages.microsoft.com/config/ubuntu/$repo_version/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+  # Install Microsoft signing key and repository
+  sudo dpkg -i packages-microsoft-prod.deb
+  # Clean up
+  rm packages-microsoft-prod.deb
+  # Update packages
+  sudo apt update
+  sudo apt-get install dotnet-sdk-8.0 -y
 fi
 
 # --------------------------------------------------------------------------------
