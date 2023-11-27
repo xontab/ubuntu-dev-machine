@@ -217,9 +217,9 @@ if [[ ${CHOICES[*]} =~ '"9"' ]]; then
 
   gsettings set org.gnome.desktop.interface font-name 'SF UI Display 11'
   gsettings set org.gnome.desktop.interface document-font-name 'SF UI Display 11'
-  gsettings set org.gnome.desktop.interface monospace-font-name 'FiraCode Nerd Font weight=453 12'
-  gsettings set org.gnome.gedit.preferences.editor editor-font 'FiraCode Nerd Font Retina 12'
   gsettings set org.gnome.desktop.wm.preferences titlebar-font 'SF UI Display 11'
+  gsettings set org.gnome.desktop.interface monospace-font-name 'Hack Nerd Font 16'
+  gsettings set org.gnome.gedit.preferences.editor editor-font 'Hack Nerd Font 13'
 
   sudo update-alternatives --set x-terminal-emulator /usr/bin/tilix.wrapper
 fi
