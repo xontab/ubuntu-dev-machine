@@ -24,7 +24,7 @@
 * Installs apps:
     * [Brew](https://brew.sh/)
     * [Docker](https://www.docker.com/)
-    * [.NET 7 + 8](https://dotnet.microsoft.com/)
+    * [.NET 8](https://dotnet.microsoft.com/)
     * [Gitg](https://github.com/GNOME/gitg)
     * [Google Chrome](https://www.google.com/chrome/)
     * [Oh My Zsh](https://ohmyz.sh/) including plugins
