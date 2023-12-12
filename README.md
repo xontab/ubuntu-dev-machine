@@ -72,10 +72,14 @@
 
 1. Click on `Browse` and `Install` the following extensions as illustrated below:
 <a href="screenshots/extensions.png"><p align="center"><img src="screenshots/extensions.png" /></p></a>
-    *  **ArcMenu** (Tip: use search keyword `ArcMenu` and sort by `Downloads`)
-    *  **Dash to Panel** (Tip: use search keyword `Panel` and sort by `Downloads`)
-    *  **Sound Input & Output Device Chooser** (Tip: use search keyword `Sound` and sort by `Downloads`)
-
+    * Must haves:
+        *  **ArcMenu** (Tip: use search keyword `ArcMenu` and sort by `Downloads`)
+        *  **Dash to Panel** (Tip: use search keyword `Panel` and sort by `Downloads`)
+    * Suggestions:
+        *  **Sound Input & Output Device Chooser** (Tip: use search keyword `Sound` and sort by `Downloads`)
+        *  **Color Picker** (Tip: use search keyword `Colo` and sort by `Downloads`)
+        *  **Rounded Window Corners** (Tip: use search keyword `Rounded` and sort by `Downloads`)
+        *  **Bing Wallpaper** (Tip: use search keyword `Bing` and sort by `Downloads`)
 
 #### ArcMenu
 
