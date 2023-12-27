@@ -52,6 +52,8 @@ if [[ ${CHOICES[*]} =~ '"1"' ]]; then
   sudo add-apt-repository ppa:git-core/ppa
   sudo apt update 
   sudo apt install curl git gitg htop btop tilix neovim tldr -y
+  sudo apt purge nautilus-extension-gnome-terminal -y
+  sed -i 's/Icon=.*/Icon=terminal/g' ~/.local/share/applications/com.gexperts.Tilix.desktop
   tldr -u
 fi
 

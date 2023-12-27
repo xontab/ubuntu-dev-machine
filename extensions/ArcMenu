@@ -1,6 +1,8 @@
 [/]
+application-shortcuts-list=[['Software', 'ubuntusoftware', 'ArcMenu_Software'], ['Tweaks', 'org.gnome.tweaks', 'org.gnome.tweaks.desktop'], ['Tilix', 'com.gexperts.Tilix', 'com.gexperts.Tilix.desktop'], ['Activities Overview', 'view-fullscreen-symbolic', 'ArcMenu_ActivitiesOverview']]
 arc-menu-icon=71
 category-icon-type='Full_Color'
+context-menu-shortcuts=[['ArcMenu Settings', '/home/shaun/.local/share/gnome-shell/extensions/arcmenu@arcmenu.com/icons/arcmenu-logo-symbolic.svg', 'ArcMenu_Settings'], ['Panel Extension Settings', 'application-x-addon-symbolic', 'ArcMenu_PanelExtensionSettings'], ['Separator', 'list-remove-symbolic', 'ArcMenu_Separator'], ['Power Options', 'system-shutdown-symbolic', 'ArcMenu_PowerOptions'], ['Activities Overview', 'view-fullscreen-symbolic', 'ArcMenu_ActivitiesOverview'], ['Show Desktop', 'computer-symbolic', 'ArcMenu_ShowDesktop']]
 custom-menu-button-icon-size=32.0
 distro-icon=5
 enable-standlone-runner-menu=false
@@ -21,11 +23,13 @@ menu-item-hover-fg-color='rgb(255,255,255)'
 menu-layout='Windows'
 menu-separator-color='rgb(61,56,70)'
 menu-width-adjustment=0
+multi-monitor=false
 override-menu-theme=true
-pinned-app-list=['Files', '', 'org.gnome.Nautilus.desktop', 'Google Chrome', '', 'google-chrome.desktop', 'Visual Studio Code', '', 'code.desktop', 'Rider', '', 'com.jetbrains-rider.desktop', 'Tilix', '', 'com.gexperts.Tilix.desktop', 'Settings', '', 'gnome-control-center.desktop']
+pinned-app-list=['Files', 'org.gnome.Nautilus', 'org.gnome.Nautilus.desktop', 'Google Chrome', 'google-chrome', 'google-chrome.desktop', 'Visual Studio Code', 'vscode', 'code.desktop', 'Rider', '/usr/lib/rider/bin/rider.svg', 'com.jetbrains-rider.desktop', 'Tilix', '', 'com.gexperts.Tilix.desktop', 'Settings', '', 'gnome-control-center.desktop']
 power-options=[(0, true), (1, true), (3, true), (2, true), (4, true), (6, true), (5, false), (7, false)]
 prefs-visible-page=0
-recently-installed-apps=@as []
+recently-installed-apps=['jetbrains-rider.desktop', 'kitty.desktop', 'firefox_firefox.desktop']
 search-entry-border-radius=(true, 25)
 shortcut-icon-type='Full_Color'
 vert-separator=false
+windows-extra-buttons=[['Files', 'org.gnome.Nautilus', 'org.gnome.Nautilus.desktop'], ['Terminal', 'org.gnome.Terminal', 'com.gexperts.Tilix.desktop'], ['Settings', 'org.gnome.Settings', 'org.gnome.Settings.desktop']]
