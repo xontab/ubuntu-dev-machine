@@ -48,6 +48,9 @@ sudo snap refresh
 
 if [[ ${CHOICES[*]} =~ '"1"' ]]; then
   echo Installing essential tools
+  sudo add-apt-repository ppa:ubuntuhandbook1/tilix
+  sudo add-apt-repository ppa:git-core/ppa
+  sudo apt update 
   sudo apt install curl git gitg htop btop tilix neovim tldr -y
   tldr -u
 fi
