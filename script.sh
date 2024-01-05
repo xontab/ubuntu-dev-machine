@@ -52,8 +52,61 @@ if [[ ${CHOICES[*]} =~ '"1"' ]]; then
   sudo add-apt-repository ppa:git-core/ppa
   sudo apt update 
   sudo apt install curl git gitg htop btop tilix neovim tldr -y
+
+  # Tilix
   sudo apt purge nautilus-extension-gnome-terminal -y
   sed -i 's/Icon=.*/Icon=terminal/g' ~/.local/share/applications/com.gexperts.Tilix.desktop
+
+  # Warp
+  mkdir -p ~/Applications
+  cp ./warp/* ~/Applications
+  mkdir -p ~/.local/share/warp/
+  mkdir -p ~/.local/share/warp/themes/  
+  mv -f  ~/Applications/ubuntu.yaml ~/.local/share/warp/themes/ubuntu.yaml
+  cat << EOF > ~/.local/share/applications/warp.desktop
+[Desktop Entry]
+# The version of the desktop entry spec this conforms to.
+Version=1.0
+Type=Application
+Name=Warp
+GenericName=TerminalEmulator
+Exec=env VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/intel_icd.x86_64.json /home/$USER/Applications/appimaged.AppImage wrap "/home/$USER/Applications/Warp.AppImage" %U
+StartupWMClass=dev.warp.Warp
+Keywords=shell;prompt;command;commandline;cmd;
+Icon=/home/$USER/Applications/warp.png
+Categories=System;TerminalEmulator;
+# Don't run this application within a terminal.
+Terminal=false
+# Register ourselves as the handler for warp:// URLs.
+MimeType=x-scheme-handler/warp;
+X-AppImage-Version=
+X-ExecLocation=/home/$USER/Applications/Warp.AppImage
+TryExec=/home/$USER/Applications/appimaged.AppImage
+Comment=/home/$USER/Applications/Warp.AppImage
+X-AppImage-Identifier=c5c0303593f321b6c55c3ec5dba3c954
+Actions=Trash;OpenPortableHome;CreatePortableHome;Extract;Show
+
+[Desktop Action Trash]
+Name=Move to Trash
+Exec=gio trash "/home/$USER/Applications/Warp.AppImage"
+
+[Desktop Action OpenPortableHome]
+Name=Open Portable Home in File Manager
+Exec=xdg-open "/home/$USER/Applications/Warp.AppImage.home"
+
+[Desktop Action CreatePortableHome]
+Name=Create Portable Home
+Exec=mkdir -p "/home/$USER/Applications/Warp.AppImage.home"
+
+[Desktop Action Extract]
+Name=Extract to AppDir
+Exec=bash -c "cd '/home/$USER/Applications' && '/home/$USER/Applications/Warp.AppImage' --appimage-extract && xdg-open '/home/$USER/Applications/squashfs-root'"
+
+[Desktop Action Show]
+Name=Open Containing Folder
+Exec=xdg-open "/home/$USER/Applications"
+EOF
+
   tldr -u
 fi
 

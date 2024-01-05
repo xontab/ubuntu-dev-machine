@@ -31,6 +31,7 @@
     * [Rider](https://www.jetbrains.com/rider/)
     * [Tilix](https://gnunn1.github.io/tilix-web/)
     * [Visual Studio Code](https://code.visualstudio.com/)
+    * [Warp](https://www.warp.dev/)
 * Installs fonts:
     * [Nerd Font](https://www.nerdfonts.com/)
     * [SF UI Font](https://developer.apple.com/fonts/)
