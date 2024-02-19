@@ -7,8 +7,8 @@ TITLE="Ubuntu Development Setup Installer v1.0.0"
 
 CHOICES=$(whiptail --title "$TITLE" --checklist \
 "To add or remove a component, use <SPACE> button.  
-Use <TAB> + <ENTER> to confirm selection" 18 74 10 \
-"1" "Essential Tools (curl, htop, btop, git, neovim, tldr...)" ON \
+Use <TAB> + <ENTER> to confirm selection" 18 81 10 \
+"1" "Essential Tools (curl, htop, btop, git, neovim, tilix, tldr...)" ON \
 "2" "Install ZSH (including Plugins)" ON \
 "3" "Install Brew" ON \
 "4" "Install Docker" ON \
@@ -16,8 +16,9 @@ Use <TAB> + <ENTER> to confirm selection" 18 74 10 \
 "6" "Install Rider" ON \
 "7" "Install Visual Studio Code" ON \
 "8" "Install Google Chrome" ON \
-"9" "Configure Aliases and Shortcuts" ON \
-"10" "Enable Fingerprint Authentication" ON 3>&1 1>&2 2>&3)
+"9" "Install Warp Terminal" ON \
+"10" "Configure Aliases and Shortcuts" ON \
+"11" "Enable Fingerprint Authentication" ON 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus != 0 ]; then
