@@ -1,0 +1,22 @@
+{
+  "prefs": {
+    "HasAutoOpenedWelcomeFolder": "true",
+    "AddedSubshellCommands": "[\"docker\"]",
+    "EmacsBindingsBannerState": "\"Dismissed\"",
+    "AliasExpansionBannerSeen": "true",
+    "FontName": "\"Hack Nerd Font\"",
+    "Theme": "{\"Custom\":{\"name\":\"Ubuntu\",\"path\":\"~/.local/share/warp-terminal/themes/ubuntu.yaml\"}}",
+    "WelcomeTipsCompleted": "true",
+    "Notifications": "{\"mode\":\"Enabled\",\"is_long_running_enabled\":true,\"long_running_threshold\":{\"secs\":30,\"nanos\":0},\"is_password_prompt_enabled\":true}",
+    "ReceivedReferralTheme": "\"Inactive\"",
+    "Shortcuts": "true",
+    "AutosuggestionAcceptedCount": "2",
+    "FontSize": "18.0",
+    "SafeModeEnabled": "true",
+    "ExperimentId": "c1081b6d-f20a-4c73-831c-6cb902e57886",
+    "OverrideOpacity": "75",
+    "WorkflowsBoxOpen": "true",
+    "HasDismissedWarpDriveWelcome": "true",
+    "WelcomeTipsFeaturesUsed": "[{\"Action\":\"ThemePicker\"},{\"Action\":\"CommandPalette\"},{\"Hint\":\"BlockAction\"},{\"Hint\":\"BlockSelect\"},{\"Action\":\"WarpAI\"},{\"Hint\":\"CreateBlock\"},{\"Action\":\"SplitPane\"},{\"Action\":\"OpenWarpDrive\"}]"
+  }
+}
