@@ -6,9 +6,9 @@ CHOICES=( "$@" )
 source /etc/os-release
 
 # Uncomment the below line to define a custom Ubuntu version
-#UBUNTU_CODENAME=jammy
-RIDER_FILENAME=JetBrains.Rider-2023.3-EAP3-233.9802.20.Checked.tar.gz
-RIDER_ROOT_FOLDER="JetBrains Rider-233.9802.20"
+#UBUNTU_CODENAME=noble
+RIDER_FILENAME=JetBrains.Rider-2024.3.6.tar.gz
+RIDER_ROOT_FOLDER="JetBrains Rider-2024.3.6"
 
 # --------------------------------------------------------------------------------
 
@@ -48,7 +48,6 @@ sudo snap refresh
 
 if [[ ${CHOICES[*]} =~ '"1"' ]]; then
   echo Installing essential tools
-  sudo add-apt-repository ppa:ubuntuhandbook1/tilix
   sudo add-apt-repository ppa:git-core/ppa
   sudo apt update 
   sudo apt install curl git gitg htop btop tilix neovim tldr gnome-sushi -y
@@ -136,7 +135,7 @@ fi
 
 if [[ ${CHOICES[*]} =~ '"6"' ]]; then
   echo Installing Rider
-  wget https://download-cdn.jetbrains.com/rider/$RIDER_FILENAME
+  wget https://download.jetbrains.com/rider/$RIDER_FILENAME
   tar -xvzf $RIDER_FILENAME
   mv "./$RIDER_ROOT_FOLDER/" rider
   sudo mv ./rider /usr/lib/
